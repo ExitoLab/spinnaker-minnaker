@@ -1,0 +1,10 @@
+*.terraform
+*.terraform.*
+*.pem
+*.tfplan
+*.tfstate
+*.tfstate.backup
+*.lock.info
+.terraform
+.DS_Store
+*.terraform.lock.hcl
