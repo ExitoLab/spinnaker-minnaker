@@ -54,5 +54,9 @@ resource "aws_instance" "app_server" {
     private_key = file(var.private_key_path)
   }
 
+  root_block_device {
+    volume_size           = "100"
+    delete_on_termination = false
+  }
   tags       = local.tags
 }
