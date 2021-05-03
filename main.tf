@@ -47,6 +47,11 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids = [aws_security_group.sg-instance.id]
   key_name               = var.ssh_key_name
 
+  root_block_device {
+    volume_size           = "30"
+    delete_on_termination = false
+  }
+
   connection {
     type        = "ssh"
     host        = self.public_ip
@@ -54,5 +59,7 @@ resource "aws_instance" "app_server" {
     private_key = file(var.private_key_path)
   }
 
-  tags       = local.tags
+  user_data = file("scripts/user-data.sh")
+
+  tags = local.tags
 }

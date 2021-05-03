@@ -22,7 +22,7 @@ variable "subnet_cidr_1" {
 variable "instance_type" {
   description = "The instance type"
   type        = string
-  default     = "t2.micro"
+  default     = "m5.2xlarge"
 }
 
 variable "private_key_path" {
@@ -37,5 +37,10 @@ variable "ssh_key_name" {
 
 variable "public_key" {
   description = "public_key to the ec2 instance"
+  type        = string
+}
+
+variable "instance_id" {
+  description = "instance name"
   type        = string
 }
