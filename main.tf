@@ -49,7 +49,7 @@ resource "aws_instance" "app_server" {
 
   root_block_device {
     volume_size           = "30"
-    delete_on_termination = false
+    delete_on_termination = true
   }
 
   connection {
